@@ -60,7 +60,7 @@ pipeline {
                 
                 // 2. Start the brand new version we just built!
                 // REPLACE "3000:3000" with whatever port your Node.js backend uses
-                sh 'docker run -d -p 3001:3000 --name my-marketplace-website marketplace-app'
+                sh 'docker run -d -p 3002:3000 --name my-marketplace-website marketplace-app'
             }
         }
     }
