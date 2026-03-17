@@ -7,7 +7,7 @@ PORT=3000
 6. test any functionality in the website, the backend must be functional
 7. create a jenkins file besides the root
 8. paste the following content inside the jenkins file :
-9.  pipeline {
+9. pipeline {
     agent any 
 
     // Tell Jenkins to load the Node.js tool we just configured
@@ -27,7 +27,7 @@ PORT=3000
             steps {
                 echo 'Installing Node.js backend packages...'
                 // Tell Jenkins to go into the correct folder first
-                dir('Firma-main/Back') {
+                dir('firma/Back') {
                     sh 'npm install' 
                 }
             }
@@ -52,7 +52,7 @@ PORT=3000
         stage('Docker Build (Dry Run)') {
             steps {
                 echo 'Building the Docker image to ensure the Dockerfile works...'
-                dir('Firma-main') {
+                dir('firma') {
                     // We will tag (-t) the image as "marketplace-app"
                     sh 'docker build -t marketplace-app .'
                 }
@@ -69,11 +69,11 @@ PORT=3000
                 
                 // 2. Start the brand new version we just built!
                 // REPLACE "3000:3000" with whatever port your Node.js backend uses
-                sh 'docker run -d -p 3000:3000 --name my-marketplace-website marketplace-app'
+                sh 'docker run -d -p 3001:3000 --name my-marketplace-website marketplace-app'
             }
         }
     }
-}
+} 
 10. type "docker run -d -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 --restart=on-failure jenkins/jenkins:lts" in the cmd in the new outer root
 11. open "http://localhost:8080/" and enter your credentials
 12. press "new item"
