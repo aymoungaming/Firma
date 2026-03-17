@@ -18,7 +18,7 @@ pipeline {
             steps {
                 echo 'Installing Node.js backend packages...'
                 // Tell Jenkins to go into the correct folder first
-                dir('Firma-main/Back') {
+                dir('firma/Back') {
                     sh 'npm install' 
                 }
             }
