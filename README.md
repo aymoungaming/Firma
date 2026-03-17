@@ -9,8 +9,6 @@ PORT=3000
 8. paste the following content inside the jenkins file :
 9. pipeline {
     agent any 
-
-    // Tell Jenkins to load the Node.js tool we just configured
     tools {
         nodejs 'Node20' 
     }
