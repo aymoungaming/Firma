@@ -1,4 +1,4 @@
-1. type "npm install" in the cmd inside the "back" folder
+1. after cloning the repository, type "npm install" in the cmd inside the "back" folder
 2. create a new file in the root and name it ".env"
 3. paste the following content inside the ".env" file MONGO_URI=mongodb://mongo:27017/agritechDB
 PORT=3000
