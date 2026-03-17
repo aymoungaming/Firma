@@ -28,7 +28,7 @@ pipeline {
             steps {
                 echo 'Running a quick check for vulnerable packages...'
                 // We also need to be in that folder for npm audit!
-                dir('Firma-main/Back') {
+                dir('firma/Back') {
                     sh 'npm audit --audit-level=high || true'
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
         stage('Docker Build (Dry Run)') {
             steps {
                 echo 'Building the Docker image to ensure the Dockerfile works...'
-                dir('Firma-main') {
+                dir('firma') {
                     // We will tag (-t) the image as "marketplace-app"
                     sh 'docker build -t marketplace-app .'
                 }
